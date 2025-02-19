@@ -28,12 +28,14 @@ public class Folder extends Component {
     }
 
     private void show(int depth) {
-        System.out.println("  ".repeat(depth) + "📂 Папка: " + name);
+        System.out.println(new String(new char[depth]).replace("\0", "  ") + "📂 Папка: " + name);
+
         for (Component component : components) {
             if (component instanceof Folder) {
                 ((Folder) component).show(depth + 1);  // Увеличиваем отступ
             } else {
-                System.out.println("  ".repeat(depth + 1) + "📄 Файл: " + component.getName());
+                System.out.println(new String(new char[depth + 1]).replace("\0", "  ") + "📄 Файл: " + component.getName());
+
             }
         }
     }
