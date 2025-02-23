@@ -15,7 +15,7 @@ public class GetWeatherOneDayTest extends AccuweatherAbstractTest {
         Weather response = given()
                 .queryParam("apikey", getApiKey())
                 .when()
-                .get(getBaseUrl()+"/forecasts/v1/daily/1day/294021")
+                .get(getBaseUrl()+"/forecasts/v1/daily/1day/293686")
                 .then()
                 .statusCode(200)
                 .time(Matchers.lessThan(2000l))
